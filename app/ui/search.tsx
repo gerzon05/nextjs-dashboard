@@ -8,6 +8,7 @@ export default function Search({ placeholder }: { placeholder: string }) {
   const searchParams = useSearchParams();
   const pathname = usePathname()
   const { replace } = useRouter()
+
   const handleChange = useDebouncedCallback((term: string) => {
     const params = new URLSearchParams(searchParams);
     params.set('page', '1')
@@ -18,6 +19,7 @@ export default function Search({ placeholder }: { placeholder: string }) {
     }
     replace(`${pathname}?${params.toString()}`) // actualiza la URL
   }, 500)
+
   return (
     <div className="relative flex flex-1 flex-shrink-0">
       <label htmlFor="search" className="sr-only">
