@@ -78,6 +78,7 @@ export async function createInvoice(prevState: State, formData: FormData) {
     };
   }
   revalidatePath('/dashboard/invoices');
+  revalidatePath('/dashboard/customers');
   redirect('/dashboard/invoices');
 }
 
